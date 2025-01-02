@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact form for Killenard Community Centre."
+    />
+    <meta name="keywords" content="contact form, community centre, bookings" />
+    <title>Contact Form</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../Style/Stephenstyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="contactbody">
+    <!-- NAVBAR START -->
+    <nav class="navbar navbar-expand-lg navbar-dark-custom">
+      <div class="container">
+        <!-- Logo on the left -->
+        <a class="navbar-brand" href="../index.html">
+          <img
+            src="../Image/stephenimages/Navbar-Logo.png"
+            alt="Small Killenard community centre Logo"
+            height="40"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+
+        <!-- Toggle button for mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links on the right -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../news/news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../About/about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../facilities/facilities.html"
+                >Facilities</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Activties/activities.html"
+                >Activities</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../FAQS/FAQS.html">FAQ's</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- NAVBAR END -->
+
+    <!-- Main Content -->
+    <div class="container my-5">
+      <h1 class="text-center mb-4">Contact Killenard Community Centre</h1>
+      <div class="row">
+        <!-- Contact Form -->
+        <div class="col-lg-8 col-md-12">
+          <form id="contactForm" action="process-contact.php" method="POST">
+            <!-- First Name -->
+            <div class="mb-3 text-start">
+              <label for="firstName" class="form-label">First Name:</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <!-- Last Name -->
+            <div class="mb-3 text-start">
+              <label for="lastName" class="form-label">Last Name:</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3 text-start">
+              <label for="email" class="form-label">Email Address:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <!-- Phone -->
+            <div class="mb-3 text-start">
+              <label for="phone" class="form-label">Phone Number:</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-control"
+                required
+                pattern="[0-9]{10,15}"
+                title="Enter a valid phone number"
+              />
+            </div>
+
+            <!-- Inquiry Type -->
+            <div class="mb-3 text-start">
+              <label for="inquiryType" class="form-label">Inquiry Type:</label>
+              <select
+                id="inquiryType"
+                name="inquiryType"
+                class="form-select"
+                required
+              >
+                <option value="">-- Select Inquiry Type --</option>
+                <option value="general">General Inquiry</option>
+                <option value="booking">Booking</option>
+              </select>
+            </div>
+
+            <!-- Booking Options -->
+            <div
+              id="bookingOptions"
+              class="mb-3 text-start"
+              style="display: none"
+            >
+              <label for="bookingType" class="form-label">Booking Type:</label>
+              <select id="bookingType" name="bookingType" class="form-select">
+                <option value="">-- Select Booking Type --</option>
+                <option value="mainHall">Main Hall</option>
+                <option value="studio1">Studio 1</option>
+                <option value="studio2">Studio 2</option>
+                <option value="studio3">Studio 3</option>
+                <option value="mainHallStage">
+                  Main Hall with Stage (Event)
+                </option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-3 text-start">
+              <label for="message" class="form-label">Your Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-control"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+        </div>
+
+        <!-- Information Box -->
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="p-4 border rounded bg-light">
+            <h3>Community Centre Hours</h3>
+            <p>9:00 AM - 11:00 PM</p>
+            <h5>Important Information</h5>
+            <p>
+              Killenard Community Centre is a voluntary organisation. Please
+              allow a few days for a response.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Start -->
+    <footer class="bg-light text-dark text-center py-4 rounded-custom">
+      <div class="container">
+        <!-- Row 1: Logo with Social Media Icons -->
+        <div class="row mt-2">
+          <div class="col-12">
+            <img
+              src="../Image/stephenimages/KillenardLOGO.svg"
+              alt="Killenard Community Centre Logo"
+              class="mb-3 img-fluid"
+              style="max-width: 100px"
+            />
+            <div>
+              <a
+                href="https://www.facebook.com/Killenard/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mx-2"
+              >
+                <img
+                  src="../Image/stephenimages/Icons/FacebookIcon.svg"
+                  alt="Facebook Icon"
+                  style="width: 40px"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/killenardcommunitycentre/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mx-2"
+              >
+                <img
+                  src="../Image/stephenimages/Icons/InstagramIcon.svg"
+                  alt="Instagram Icon"
+                  style="width: 40px"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Menu Items -->
+        <div class="row mt-3">
+          <div class="col-12">
+            <ul class="list-inline mb-0 footer-menu">
+              <li class="list-inline-item mx-3">
+                <a href="news/news.html" class="text-dark text-decoration-none"
+                  >News</a
+                >
+              </li>
+              <li class="list-inline-item mx-3">
+                <a
+                  href="About/about.html"
+                  class="text-dark text-decoration-none"
+                  >About</a
+                >
+              </li>
+              <li class="list-inline-item mx-3">
+                <a
+                  href="facilities/facilities.html"
+                  class="text-dark text-decoration-none"
+                  >Facilities</a
+                >
+              </li>
+              <li class="list-inline-item mx-3">
+                <a
+                  href="Activties/activities.html"
+                  class="text-dark text-decoration-none"
+                  >Activities</a
+                >
+              </li>
+              <li class="list-inline-item mx-3">
+                <a href="FAQS/FAQS.html" class="text-dark text-decoration-none"
+                  >FAQ's</a
+                >
+              </li>
+              <li class="list-inline-item mx-3">
+                <a
+                  href="contact/contact.html"
+                  class="text-dark text-decoration-none"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+      // Show booking options if 'Booking' is selected
+      const inquiryType = document.getElementById("inquiryType");
+      const bookingOptions = document.getElementById("bookingOptions");
+
+      inquiryType.addEventListener("change", function () {
+        if (this.value === "booking") {
+          bookingOptions.style.display = "block";
+        } else {
+          bookingOptions.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
